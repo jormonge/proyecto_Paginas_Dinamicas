@@ -1,0 +1,462 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+ 
+ ====================
+ universal pseudo-elements, *:before and *:after,
+ to select every imaginable element and change the box-sizing to border-box.
+ ========================= 
+
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}  
+
+==========================================
+  USEFUL LINKS
+==========================================
+
+Encoding Special Characters   http://copypastecharacter.com
+CSS Pseudo-classes: https://www.w3schools.com/css/css_pseudo_classes.asp
+CSS Matic - https://www.cssmatic.com/
+Colors:  https://www.color-hex.com/
+Icons: https://www.copypastecharacter.com/
+
+
+
+
+========================================
+  *** Contenedores ***
+========================================
+
+
+
+
+.container{
+  padding-left: 30px;
+  padding-right: 30px; 
+
+} /*Added to the next, we get the parent box with breath anc centered*/
+
+.container,
+.multicontainer {
+  margin: 0 auto;
+  width: 960px;
+}/* 
+
+Podemos usar esta clase de contenedor en diferentes elementos para establecer un width común, centrar los elementos en la página y aplicar un padding horizontal común.
+Establecer un width le dice al navegador definitivamente qué tan ancho debe ser cualquier elemento con la clase de contenedor. El uso de un margen izquierdo y derecho de 
+"auto" junto con el width establecido permite que el navegador descubra automáticamente los márgenes izquierdo y derecho iguales para el elemento, centrándolo así en la página. Por último, el padding izquierdo y derecho garantiza que nuestro contenido no esté sentado directamente en el borde del elemento y proporciona un poco de espacio para respirar el contenido.
+*/
+
+
+
+
+.multicontainer,
+.col-1-3, 
+.col-2-3{
+  padding-left: 15px;
+  padding-right: 15px;
+} /*when two columns are sitting next to one another, the width of the space between them will be double that of the space from the outside columns to the edge of the row. To balance this we’ll place all of our columns within a grid and add the same padding from our columns to that grid*/
+
+.col-1-3, 
+.col-2-3{ 
+  display: inline-block;
+  vertical-align: top; 
+}
+
+/*The vertical-align property works only with inline and table-cell elements—it won’t work for block, inline-block, or any other element levels === 
+  The vertical-align property accepts a handful of different values; the most popular values are top, middle, and bottom. */
+
+
+
+.col-1-3{
+  width: 33.33%;
+} 
+
+/*allows us to have three columns of equal width-- This column will ocupy one third of the element width*/
+
+
+.col-2-3{ 
+  width: 66.66%;
+} 
+
+/*two columns with the total width split between them  -- This column will ocupy two thirds of the element width*/
+
+
+
+
+
+  ========================================
+  Clearfix  "Containing Floats "
+  ========================================
+  --
+  this basically ensures that when applying float to elements, if we apply this class to the parent container element of that floated element, this clearfix will ensure the flow of the document after and before it wont be affected by the float
+
+
+
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+  clear: both;
+  *zoom: 1;
+}
+
+
+  
+=========
+Typography
+==============
+
+h1, h3, h4, h5, p {
+  margin-bottom: 22px;
+}
+
+
+h1, h2, h3, h4 {
+  color: #000000;
+}
+h1 {
+  font-size: 36px;
+  line-height: 44px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 44px;
+}
+h3 {
+  font-size: 21px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  color: #a9b2b9;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+strong {
+  font-weight: 400;
+}
+cite, em {
+  font-style: italic;
+}
+
+
+  
+
+
+=============================
+  <a> Links
+=============================
+
+a {
+  color: #000000;
+  text-decoration: none;
+}
+a:hover {
+  color: #a9b2b9;
+}
+
+
+p a {
+  border-bottom: 1px solid #000000;
+}
+.primary-header a,
+.primary-footer a {
+  color: #fff;
+}
+
+.primary-header a:hover,
+.primary-footer a:hoover {
+  color: #000000;
+}
+
+
+  ========================================
+  Buttons
+  ========================================
+
+
+.btn {
+  font-size: 16px;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 0;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 400;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+}
+
+.btn-alt {
+border: 1px solid #000000;
+padding: 10px 30px;
+}
+.btn-alt:hover {
+  background: #fff;
+  color: #648880;
+}
+
+.btn-default {
+  border: 0;
+  background: #000000;
+  padding: 11px 30px;
+  font-size: 14px;
+}
+.btn-default:hover {
+  background: #77a198;
+}
+
+
+  ========================================
+  Primary header
+  ========================================
+
+
+.logo {
+  float: left;
+  border-top: 4px solid #000000 ;
+  padding: 40px 0 22px 0;
+  /*top right bottom left*/
+  font-size: 48px;
+  line-height: 44px;
+  font-weight: 100;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+}
+
+}
+.primary-nav {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+}
+
+
+
+  ========================================
+  Primary footer
+  ========================================
+
+
+
+.primary-footer {
+  padding-bottom: 44px;
+  padding-top: 44px;
+  color: #648880;
+  font-size: 14px;
+}
+.primary-footer small {
+  float: left;
+}
+
+
+==========================
+  Navigation
+=============================
+
+.nav {
+  text-align: right;
+}
+
+
+.nav li {
+  display: inline-block;
+  margin: 0 10px;
+  vertical-align: top;
+}
+.nav li:last-child {
+  margin-right: 0;
+}
+
+
+
+ ======= ====================================================
+              *******    Main Styling    ************
+  ==========================================================
+
+
+
+
+
+
+  ========================================
+  Main Content/Home
+  ========================================
+
+
+
+
+
+
+
+  ======================
+    Additional PAGE 1
+  =====================
+  
+      
+  
+
+
+  ========================================
+  Additional PAGE 2
+  ========================================
+
+
+
+
+
+
+  ========================================
+  Additional PAGE 3
+  ========================================
+
+
+
+
+
+
+
+
+
+
+
+
+  ========================================
+  Table Styling - Optional- 
+  ========================================
+
+
+
+/*  JUST FOR CHECK LINES--
+table,
+thead,
+th,
+tr,
+td {
+  border: 1px solid black;
+} 
+
+/*
+table {
+  margin-bottom: 44px;
+  width: 100%;
+}
+table:last-child {
+  margin-bottom: 0;
+}
+
+
+
+th,
+td {
+  padding-bottom: 22px;
+  vertical-align: top;
+}
+th {
+  padding-right: 45px;
+  text-align: right;
+  width: 20%;
+}
+td {
+  width: 40%;
+}
+thead {
+  line-height: 44px;
+}
+thead th {
+  color: #000000;
+  font-size: 24px;
+}
+tbody th {
+  color: #000000;
+  font-size: 14px;
+  font-weight: 400;
+  padding-top: 22px;
+  text-transform: uppercase;
+}
+tbody td {
+  border-top: 1px solid #000000;
+  padding-top: 21px;
+}
+tbody td:first-of-type {
+  padding-right: 15px;
+}
+tbody td:last-of-type {
+  padding-left: 15px;
+}
+tbody td:only-of-type {
+  padding-left: 0;
+  padding-right: 0;
+}
+table a {
+  color: #888;
+}
+table h4 {
+  margin-bottom: 0;
+}
+*/
+
